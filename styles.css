@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#section-1 {
+  height: 100vh;
+  width: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+#hover_btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#hover_btn:active {
+  background-color: #0056b3;
+  transform: scale(0.95);
+}
+
+#container.active {
+  width: 20px;
+  height: 20px;
+  background-color: #28a745;
+  transform: scale(1.1) translateY(-5px);
+  border-radius: 50%;
+  transition: 2s ease;
+  animation: hoverAnimation 1s ease infinite alternate;
+}
+
+
+@keyframes hoverAnimation {
+  0% {
+    background-color: #007BFF;
+    transform: scale(1) translateY(0);
+    transform: translateY(20px);
+  }
+  50% {
+    background-color: #ffc107;
+    transform: scale(1.05) translateY(-2px);
+    transform: translateY(-20px);
+
+  }
+  100% {
+    background-color: #28a745;
+    transform: scale(1.1) translateY(-5px);
+  }}
+
+#container {
+  width: 100px;
+  height: 100px;
+  background-color: #28a745;
+  transition: 2s ease;
+  animation: moveAndColorChange 4s infinite alternate;
+}
+
+@keyframes moveAndColorChange {
+  0% {
+    transform: translateY(0);
+    background-color: #28a745;
+  }
+  50% {
+    transform: translateY(-50px);
+    background-color: #ffc107;
+  }
+  100% {
+    transform: translateY(0);
+    background-color: #28a745;
+  }
+}
+
+#container:hover {
+  animation-play-state: paused;
+}
+
+
+
